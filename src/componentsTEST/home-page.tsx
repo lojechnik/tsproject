@@ -1,6 +1,6 @@
 import React, { useRef,useEffect, useState, useMemo, useCallback,useContext } from 'react'
 import styles from './home-page.module.css' ;
-import TaskInput from './task-input'
+import FormInput from './form-input'
 import AddTaskBtn from './addtaskbtn'
 import { Route,Link,Router} from 'react-router-dom';
 import { DataContext, dataContextType} from './context/data-context';

@@ -1,8 +1,12 @@
 import { useAuth } from '../services/auth';
 import { Route, Navigate } from 'react-router-dom';
-import { useEffect, useState } from 'react';
-
-export function ProtectedRouteElement({ element }) {
+import { useEffect, useState, useContext } from 'react';
+import { DataContext } from './context/data-context';
+import React from 'react'
+interface ParentCompProps {
+  childComp?: React.ReactNode;
+}
+export function ProtectedRouteElement( element:ParentCompProps ) {
     const {data,setData} = useContext(DataContext)
     const [isUserLoaded, setUserLoaded] = useState(false);
     const init = () => {
@@ -13,8 +17,8 @@ export function ProtectedRouteElement({ element }) {
   useEffect(() => {
     init();
   }, []);
-  const handleLoginClick = (index) => {
-    const nextData = data.map((c, i) => {
+  const handleLoginClick = (index:number) => {
+    const nextData = data.map((c:dataObjectType, i) => {
       if (i === index) {
         c.isTaskInputVisible = !c.isTaskInputVisible
         return c;
