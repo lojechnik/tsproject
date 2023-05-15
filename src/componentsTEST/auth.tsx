@@ -18,7 +18,7 @@ export const Auth = () =>{
       }
     });
     
-    setAuth(nextAuth.toString());
+    // setAuth(nextAuth.toString());
 
   
   const handleLoginClick = () => {
