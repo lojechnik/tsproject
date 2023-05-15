@@ -37,7 +37,7 @@ export const Auth = () =>{
   <Link to={{
     pathname: "/home",
     }}>
-  <button onClick = {()=> {handleLoginClick}}>LOGIN</button>
+  <button onClick = {handleLoginClick}>LOGIN</button>
   </Link>
  </>
   ) 

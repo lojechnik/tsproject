@@ -6,7 +6,6 @@ import History from './componentsTEST/history';
 import { Home } from './componentsTEST/home-page';
 import { authContextType, AuthContext } from './componentsTEST/context/auth-context'
 const App = () => {
-  const localStorageData = JSON.parse(localStorage.getItem("todoData") || '')
   const [auth] = useState<authContextType>('')
   const [data] = useState<dataContextType>([])
   return (

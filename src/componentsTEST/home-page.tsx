@@ -61,11 +61,7 @@ const evalue = taskInputEl.current
     console.log('changedData', changedData)
   }
 
-  // const pushedItem:dataObjectType = {
-  //   task:searchText,
-  //   author:auth,
-  //   date:date
-  // }
+ 
 
 const storedValue:string | null = localStorage.getItem("todoData")
   useEffect(() => {
@@ -75,11 +71,11 @@ const storedValue:string | null = localStorage.getItem("todoData")
     }
   },[])
 
-  useEffect(() => {
-    localStorage.setItem("todoData", JSON.stringify(data))
-    console.log(data, 'data')
-    console.log('SEND')
-  }, [data])
+  // useEffect(() => {
+  //   localStorage.setItem("todoData", JSON.stringify(data))
+  //   console.log(data, 'data')
+  //   console.log('SEND')
+  // }, [data])
   
   return(
     <div>
