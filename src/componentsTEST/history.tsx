@@ -14,7 +14,7 @@ return (
     <div>
       {
       state.todo.history.map((c:historyObjectType) => {
-        if (c.auth === auth)
+        if (c.author === auth)
         return(
             <>
               {

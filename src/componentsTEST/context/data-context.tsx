@@ -4,8 +4,7 @@ import React, { useEffect, useState, useMemo, useCallback,useContext,createConte
 export type historyObjectType = {
   date: string,
   author: string,
-  task: string,
-  auth:string
+  task: string
 }
 
 export type historyContextType = historyObjectType[]

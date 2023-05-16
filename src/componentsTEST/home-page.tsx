@@ -16,7 +16,7 @@ export const Home = () =>{
 
   const taskInputEl = useRef<HTMLInputElement>(null);
 
-  const [data,setData] = useState<dataContextType>([])
+  const data = useContext<dataContextType>([])
   const [auth,setAuth] = useState<authContextType>('')
   const clear = () => {
     setData([])
@@ -47,8 +47,7 @@ const evalue = taskInputEl.current
         c.history.push({
           task: c.task,
           author: c.author,
-          date: date,
-          auth:auth
+          date: date
           })
         console.log('VALUECHECK', c.history)
         return c
@@ -64,6 +63,7 @@ const evalue = taskInputEl.current
  
 
 const storedValue:string | null = localStorage.getItem("todoData")
+console.log('dataValue',data)
   useEffect(() => {
     if (storedValue !==null) {
     localStorage.setItem("todoData", JSON.stringify([]))
@@ -71,11 +71,11 @@ const storedValue:string | null = localStorage.getItem("todoData")
     }
   },[])
 
-  // useEffect(() => {
-  //   localStorage.setItem("todoData", JSON.stringify(data))
-  //   console.log(data, 'data')
-  //   console.log('SEND')
-  // }, [data])
+  useEffect(() => {
+    localStorage.setItem("todoData", JSON.stringify(data))
+    console.log(data, 'data')
+    console.log('SEND')
+  }, [data])
   
   return(
     <div>
@@ -94,8 +94,8 @@ const storedValue:string | null = localStorage.getItem("todoData")
               return(
                 <div className={item.task} key={i}>
                   <span>{item.author}__</span>
-                  <span>{item.task}</span>
-                  {item.isTaskInputVisible && <input ref={taskInputEl} />} 
+                  <span>{item.task}xx</span>
+                  {/* {item.isTaskInputVisible && <input ref={taskInputEl} />}  */}
                   <Link to= {"/task/" + item.task} state={{ todo: {...item} }} >
                   <button>Open history</button>   
                   </Link>          
