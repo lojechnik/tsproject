@@ -1,11 +1,11 @@
 import React, { useRef, useEffect, useState, useMemo, useCallback,useContext, createContext } from 'react'
 import {useLocation,Link} from 'react-router-dom'
-import { DataContext,dataContextType } from './context/data-context'
+import {dataArrayType } from './context/data-context'
 import { AuthContext, authContextType } from './context/auth-context'
 export const Auth = () =>{
   const fioInputRef = useRef<HTMLInputElement>(null);
   const [auth,setAuth] = useState<authContextType>('')
-  const [data, setData] = useState<dataContextType>([])
+  const [data, setData] = useState<dataArrayType>([])
     const nextAuth = data.map((c, i) => { 
       if (fioInputRef.current)
       if (c.author === fioInputRef.current.value) {

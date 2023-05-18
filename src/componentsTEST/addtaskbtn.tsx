@@ -1,5 +1,5 @@
-import React, { useEffect, useState, useMemo, useCallback,useContext } from 'react'
-import { DataContext, dataContextType, dataObjectType } from './context/data-context'
+import { useState } from 'react'
+import { dataArrayType, dataObjectType } from './context/data-context'
 import { historyContextType } from './context/data-context';
 const AddTaskBtn = ({taskText, authorName,history}: { taskText:string,  authorName:string, history?:historyContextType}) =>{
  console.log(taskText)
@@ -13,7 +13,7 @@ const AddTaskBtn = ({taskText, authorName,history}: { taskText:string,  authorNa
   date: new Date().toLocaleString()
   }]
  }
-  const [data, setData] = useState<dataContextType>([]);
+  const [data, setData] = useState<dataArrayType>([]);
   const pushTask = (dataItem:dataObjectType) =>{
     setData([...data,
        dataItem

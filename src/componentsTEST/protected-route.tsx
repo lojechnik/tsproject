@@ -1,14 +1,13 @@
 
 import { Route, Navigate } from 'react-router-dom';
 import { useEffect, useState, useContext } from 'react';
-import { DataContext } from './context/data-context';
-import { dataContextType, dataObjectType } from './context/data-context';
+import { dataArrayType, dataObjectType } from './context/data-context';
 import React from 'react'
 interface ParentCompProps {
   childComp?: React.ReactNode;
 }
 export function ProtectedRouteElement( element:ParentCompProps ) {
-    const [data,setData] = useState<dataContextType>([])
+    const [data,setData] = useState<dataArrayType>([])
     const [isUserLoaded, setUserLoaded] = useState(false);
     const init = () => {
     setUserLoaded(true);

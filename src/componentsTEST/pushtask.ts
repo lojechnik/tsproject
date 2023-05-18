@@ -1,7 +1,7 @@
-import { DataContext, dataContextType, dataObjectType } from './context/data-context'
+import { dataArrayType, dataObjectType } from './context/data-context'
 import {useState} from 'react'
 export const pushTask = (dataItem:dataObjectType) =>{
-    const [data, setData] = useState<dataContextType>([]);
+    const [data, setData] = useState<dataArrayType>([]);
     setData([...data,
        dataItem
       ])

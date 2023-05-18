@@ -3,7 +3,7 @@ import styles from './home-page.module.css' ;
 import FormInput from './form-input'
 import AddTaskBtn from './addtaskbtn'
 import { Route,Link,Router} from 'react-router-dom';
-import { DataContext, dataContextType} from './context/data-context';
+import {dataArrayType} from './context/data-context';
 import { AuthContext, authContextType } from './context/auth-context';
 import History from './history'
 import EditButton from './edit-button';
@@ -15,8 +15,7 @@ export const Home = () =>{
   const [taskInputValue, setTaskInputValue] = useState('')
 
   const taskInputEl = useRef<HTMLInputElement>(null);
-
-  const data = useContext<dataContextType>([])
+ const [data,setData] = useState<dataArrayType>([])
   const [auth,setAuth] = useState<authContextType>('')
   const clear = () => {
     setData([])
@@ -96,7 +95,7 @@ console.log('dataValue',data)
                   <span>{item.author}__</span>
                   <span>{item.task}xx</span>
                   {/* {item.isTaskInputVisible && <input ref={taskInputEl} />}  */}
-                  <Link to= {"/task/" + item.task} state={{ todo: {...item} }} >
+                  <Link to= {"/task/" + item.task} state={{data:{data}, todo: {...item} }} >
                   <button>Open history</button>   
                   </Link>          
                   <button onClick={()=>{

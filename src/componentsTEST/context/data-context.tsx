@@ -21,8 +21,8 @@ export type dataObjectType = {
   history: historyContextType
 }
 
-export type dataContextType = dataObjectType[]
-  export const DataContext = createContext<dataContextType>([]);
+export type dataArrayType = dataObjectType[]
+ 
 
   
   
