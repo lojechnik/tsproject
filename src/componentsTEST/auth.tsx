@@ -5,7 +5,7 @@ import { AuthContext, authContextType } from './context/auth-context'
 export const Auth = () =>{
   const fioInputRef = useRef<HTMLInputElement>(null);
   const [auth,setAuth] = useState<authContextType>('')
-  const [data, setData] = useState<dataArrayType>([])
+  const [data] = useState<dataArrayType>([])
     const nextAuth = data.map((c, i) => { 
       if (fioInputRef.current)
       if (c.author === fioInputRef.current.value) {

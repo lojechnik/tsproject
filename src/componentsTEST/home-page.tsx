@@ -6,12 +6,12 @@ import { Route,Link,Router} from 'react-router-dom';
 import {dataArrayType} from './context/data-context';
 import { AuthContext, authContextType } from './context/auth-context';
 import History from './history'
-import EditButton from './edit-button';
 import { dataObjectType } from './context/data-context';
+import EditButton from './edit-button';
 
 export const Home = () =>{
   const [searchText, setSearchText] = useState('')
-  const [date, setDate] = useState(new Date().toLocaleString())
+  const [date] = useState(new Date().toLocaleString())
   const [taskInputValue, setTaskInputValue] = useState('')
 
   const taskInputEl = useRef<HTMLInputElement>(null);
@@ -81,7 +81,7 @@ console.log('dataValue',data)
       <h2>Введите ФИО</h2>
       <button onClick={clear}>CLEAR CACHE</button>
       <input className={styles.Taskinput} onChange={(e)=>{setSearchText(e.target.value)}}/>
-        <AddTaskBtn taskText={searchText} authorName={auth} />
+        <AddTaskBtn taskText={searchText} authorName={auth} setterF = {setData} data = {data} />
         <Link to= "/">
           <button onClick={()=>
             setAuth('')

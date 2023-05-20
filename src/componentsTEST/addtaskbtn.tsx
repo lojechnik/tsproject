@@ -1,25 +1,36 @@
-import { useState } from 'react'
-import { dataArrayType, dataObjectType } from './context/data-context'
-import { historyContextType } from './context/data-context';
-const AddTaskBtn = ({taskText, authorName,history}: { taskText:string,  authorName:string, history?:historyContextType}) =>{
- console.log(taskText)
- const item:dataObjectType = {
-  task: taskText,
-  author: authorName,
-  date: new Date().toLocaleString(),
-  history: [{
-    task: taskText,
-  author: authorName,
-  date: new Date().toLocaleString()
-  }]
- }
-  const [data, setData] = useState<dataArrayType>([]);
+import { Dispatch,useState, SetStateAction } from "react";
+import { dataArrayType, dataObjectType } from "./context/data-context";
+import { historyContextType } from "./context/data-context";
+const AddTaskBtn = ({
+  taskText,
+  authorName,
+  history,
+  setterF,
+  data,
+}: {
+  taskText: string;
+  authorName: string;
+  history?: historyContextType;
+  setterF: Dispatch<SetStateAction<dataArrayType>>;
+  data:dataArrayType;
+}) => {
   const pushTask = (dataItem:dataObjectType) =>{
-    setData([...data,
+    setterF([...data,
        dataItem
-      ])
-        console.log('dataPushed',data)
-  }
-    return (<button onClick = {()=> pushTask(item)} >ADD</button>)
-}
-export default AddTaskBtn
+      ])}
+  console.log(taskText);
+  const addedTask = {
+    task: taskText,
+    author: authorName,
+    date: new Date().toLocaleString(),
+    history: [
+      {
+        task: taskText,
+        author: authorName,
+        date: new Date().toLocaleString(),
+      },
+    ],
+  };
+  return <button onClick={() => pushTask(addedTask)}>ADD</button>;
+};
+export default AddTaskBtn;
