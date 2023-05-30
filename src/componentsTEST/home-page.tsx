@@ -94,7 +94,7 @@ console.log('dataValue',data)
                 <div className={item.task} key={i}>
                   <span>{item.author}__</span>
                   <span>{item.task}xx</span>
-                  {/* {item.isTaskInputVisible && <input ref={taskInputEl} />}  */}
+                  {item.isTaskInputVisible && <input ref={taskInputEl} />}  
                   <Link to= {"/task/" + item.task} state={{data:{data}, todo: {...item} }} >
                   <button>Open history</button>   
                   </Link>          

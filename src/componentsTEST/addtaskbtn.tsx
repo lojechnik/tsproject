@@ -23,11 +23,13 @@ const AddTaskBtn = ({
     task: taskText,
     author: authorName,
     date: new Date().toLocaleString(),
+    isTaskInputVisible: false,
+    isFioInputVisible: false,
     history: [
       {
         task: taskText,
         author: authorName,
-        date: new Date().toLocaleString(),
+        date: new Date().toLocaleString()
       },
     ],
   };

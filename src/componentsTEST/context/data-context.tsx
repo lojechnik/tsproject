@@ -15,8 +15,8 @@ export type dataObjectType = {
   author: string,
   date: string,
   active?: boolean,
-  isTaskInputVisible?: boolean,
-  isFioInputVisible?: boolean,
+  isTaskInputVisible: boolean,
+  isFioInputVisible: boolean,
   history: historyContextType
 }
 
