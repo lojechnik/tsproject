@@ -16,7 +16,7 @@ export const Home = () =>{
 
   const taskInputEl = useRef<HTMLInputElement>(null);
  const [data,setData] = useState<dataArrayType>([])
-  const [auth,setAuth] = useState<authContextType>('')
+const { auth, updateAuth } = React.useContext(AuthContext) as authContextType;
   const clear = () => {
     setData([])
   }

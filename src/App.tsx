@@ -3,13 +3,14 @@ import { Route,Link,BrowserRouter,Routes} from 'react-router-dom';
 import { Auth } from './componentsTEST/auth'
 import History from './componentsTEST/history';
 import { Home } from './componentsTEST/home-page';
-import { authContextType, AuthContext } from './componentsTEST/context/auth-context'
+import { authContextType, AuthContext,author } from './componentsTEST/context/auth-context'
 const App = () => {
-  const [auth] = useState<authContextType>('')
+  const [auth, setAuth] = useState<author>()
   return (
-    <AuthContext.Provider value={
-    auth
-    }>
+    <AuthContext.Provider value={{
+    auth,
+    setAuth
+    }}>
         <BrowserRouter>
           <Routes>
             <Route path = "/" element = {<Auth/>}>
