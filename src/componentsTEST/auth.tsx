@@ -18,7 +18,7 @@ export const Auth = () =>{
       }
     });
     
-    // setAuth(nextAuth.toString());
+    
 
   
   const handleLoginClick = () => {
@@ -36,6 +36,7 @@ export const Auth = () =>{
   <input ref = {fioInputRef}></input>
   <Link to={{
     pathname: "/home",
+    
     }}>
   <button onClick = {handleLoginClick}>LOGIN</button>
   </Link>

@@ -49,6 +49,7 @@ const evalue = taskInputEl.current
           date: date
           })
         console.log('VALUECHECK', c.history)
+        console.log('auth',auth)
         return c
       } else {
         return c
@@ -63,12 +64,7 @@ const evalue = taskInputEl.current
 
 const storedValue:string | null = localStorage.getItem("todoData")
 console.log('dataValue',data)
-  useEffect(() => {
-    if (storedValue !==null) {
-    localStorage.setItem("todoData", JSON.stringify([]))
-    setData(JSON.parse(storedValue))
-    }
-  },[])
+
 
   useEffect(() => {
     localStorage.setItem("todoData", JSON.stringify(data))
@@ -87,13 +83,13 @@ console.log('dataValue',data)
             setAuth('')
           }>Logout</button>
         </Link>
-        <div>
+        <div className = {styles.mainContent}>
           {
             data.map((item,i) => {
               return(
                 <div className={item.task} key={i}>
                   <span>{item.author}__</span>
-                  <span>{item.task}xx</span>
+                  <span>{item.task}</span>
                   {item.isTaskInputVisible && <input ref={taskInputEl} />}  
                   <Link to= {"/task/" + item.task} state={{data:{data}, todo: {...item} }} >
                   <button>Open history</button>   
