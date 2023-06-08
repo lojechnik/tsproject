@@ -6,7 +6,7 @@ const History = () =>{
      // console.log(props)
  const { state } = useLocation()
  console.log('KONO STATE', state)
- const auth = useContext(AuthContext)
+ const {auth, setAuth} = useContext(AuthContext)
     // console.log('item1',item1)
 console.log('statexxx',state)
 return (

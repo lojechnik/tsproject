@@ -4,19 +4,8 @@ import {dataArrayType } from './context/data-context'
 import { AuthContext, authContextType } from './context/auth-context'
 export const Auth = () =>{
   const fioInputRef = useRef<HTMLInputElement>(null);
-  const [auth,setAuth] = useState<authContextType>('')
+  const {auth,setAuth} = useContext(AuthContext)
   const [data] = useState<dataArrayType>([])
-    const nextAuth = data.map((c, i) => { 
-      if (fioInputRef.current)
-      if (c.author === fioInputRef.current.value) {
-        if (fioInputRef.current)
-        return  fioInputRef.current.value
-
-      } else {
-        if (fioInputRef.current)
-        return fioInputRef.current.value
-      }
-    });
     
     
 
@@ -27,7 +16,9 @@ export const Auth = () =>{
       console.log('USERNAME',fioInputRef.current.value)
       const nextAuth = fioInputRef.current.value
       console.log('nextAuth',nextAuth)
+      console.log('beforechange',auth)
       setAuth(nextAuth)
+      console.log('afterchange',auth)
     }
   }
   }

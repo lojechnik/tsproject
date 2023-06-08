@@ -5,7 +5,7 @@ import { dataObjectType } from './context/data-context';
 import { pushTask } from './pushtask';
 const SubmitChangeBtn = ({item, taskText,display}: { item:dataObjectType,  taskText:string, display:boolean}) =>{
     const [] = useState<dataArrayType>([])
-    const [auth,setAuth] = useState<authContextType>('')
+    const [auth,setAuth] = useState<string>('')
     return (<button onClick ={()=>pushTask(item)} >ADD</button>)
 }
 export default SubmitChangeBtn
