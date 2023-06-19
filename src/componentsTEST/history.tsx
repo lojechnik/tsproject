@@ -3,11 +3,9 @@ import { useLocation } from 'react-router-dom'
 import { AuthContext,authContextType } from './context/auth-context'
 import { dataArrayType, historyContextType, historyObjectType } from './context/data-context'
 const History = () =>{
-     // console.log(props)
  const { state } = useLocation()
  console.log('KONO STATE', state)
- const {auth, setAuth} = useContext(AuthContext)
-    // console.log('item1',item1)
+ const {auth} = useContext(AuthContext)
 console.log('statexxx',state)
 return (
     <div>

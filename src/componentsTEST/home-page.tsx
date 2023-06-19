@@ -44,11 +44,11 @@ export const Home = () => {
     });
     setData(nextData);
   };
-  const evalue = taskInputEl.current;
+
   const handleSubmitClick = (index: number) => {
     const changedData = data.map((c, i) => {
       if (i === index) {
-        if (evalue) {
+        if (taskInputEl.current) {
           c.task = taskInputEl.current.value;
         }
         c.history.push({
